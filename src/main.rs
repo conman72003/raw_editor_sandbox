@@ -65,9 +65,9 @@ impl Image {
 
         // 2. The Extraction Loop! (Your turn)
         for pixel in self.pixels.iter() {
-            out_buffer.push(pixel.r as u8);
-            out_buffer.push(pixel.g as u8);
-            out_buffer.push(pixel.b as u8);
+            out_buffer.push(pixel.r.min(255) as u8);
+            out_buffer.push(pixel.g.min(255) as u8);
+            out_buffer.push(pixel.b.min(255) as u8);
         }
 
         // 3. Save it to disk
